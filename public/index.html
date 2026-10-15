@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP Mart | High-End Contemporary Apparel</title>
+  <meta name="description" content="Discover effortless elegance with AP Mart. Curated capsule collections of tailored trench coats, artisan linen, grade-A cashmere, and mulberry silk." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Boutique Design System -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar text-center">
+    <div class="container d-flex justify-content-center align-items-center gap-3">
+      <span>Complimentary Worldwide Express Delivery on orders over $150</span>
+      <span class="d-none d-md-inline text-muted">•</span>
+      <span class="d-none d-md-inline">Use code <strong class="text-white">AP10</strong> for 10% off your initial order</span>
+    </div>
+  </div>
+
+  <!-- Sticky Glass Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top aura-navbar">
+    <div class="container">
+      <a class="brand-logo" href="#">
+        AP <span>MART</span>
+      </a>
+
+      <!-- Mobile toggler & cart -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <a href="profile.html" class="icon-btn text-dark" aria-label="My Account" title="My Account">
+          <i class="bi bi-person"></i>
+        </a>
+        <button class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" aria-label="View Wishlist">
+          <i class="bi bi-heart"></i>
+          <span class="badge-counter d-none" id="mobileWishlistBadge">0</span>
+        </button>
+        <button class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="View Cart">
+          <i class="bi bi-bag"></i>
+          <span class="badge-counter d-none" id="mobileCartBadge">0</span>
+        </button>
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+
+      <!-- Nav Links & Search -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="#catalogSection">The Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#catalogSection" onclick="document.querySelector('[data-category=women]').click()">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#catalogSection" onclick="document.querySelector('[data-category=men]').click()">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#catalogSection" onclick="document.querySelector('[data-category=unisex]').click()">Unisex</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#catalogSection" onclick="document.querySelector('[data-category=accessories]').click()">Accessories</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <!-- Search box in navbar -->
+          <div class="input-group input-group-sm" style="max-width: 200px;">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+            <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Search..." aria-label="Search garments" />
+          </div>
+
+          <!-- User Profile link -->
+          <a href="profile.html" class="icon-btn d-none d-lg-inline-flex" title="My Account">
+            <i class="bi bi-person"></i>
+          </a>
+
+          <!-- Wishlist trigger -->
+          <button class="icon-btn d-none d-lg-inline-flex" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-counter d-none" id="wishlistBadge">0</span>
+          </button>
+
+          <!-- Cart trigger -->
+          <button class="icon-btn d-none d-lg-inline-flex" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Shopping Bag">
+            <i class="bi bi-bag"></i>
+            <span class="badge-counter d-none" id="cartBadge">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Editorial Hero Section -->
+  <header class="hero-section">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <span class="hero-subtitle">Autumn / Winter '26 Lookbook</span>
+          <h1 class="hero-title">Effortless Elegance, Tailored for Modern Life.</h1>
+          <p class="hero-desc">
+            Impeccably tailored garments designed with architectural restraint. Responsibly woven from Grade-A Mongolian cashmere, French flax linen, and heavy Egyptian gabardine.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#catalogSection" class="btn btn-aura-primary">
+              Explore Collection <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="#perksSection" class="btn btn-aura-outline">
+              Our Craft & Standards
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="uploads/hero-lookbook.jpg" alt="AP Mart Editorial Lookbook" class="hero-bg-media shadow-lg" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Brand Perks / Trust Bar -->
+  <section id="perksSection" class="perks-bar">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="perk-card">
+            <div class="perk-icon"><i class="bi bi-feather"></i></div>
+            <div>
+              <h6 class="mb-0 fw-bold">Pure Organic Fibers</h6>
+              <small class="text-muted">OEKO-TEX certified</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="perk-card">
+            <div class="perk-icon"><i class="bi bi-truck"></i></div>
+            <div>
+              <h6 class="mb-0 fw-bold">Complimentary Shipping</h6>
+              <small class="text-muted">On orders over $150</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="perk-card">
+            <div class="perk-icon"><i class="bi bi-arrow-counterclockwise"></i></div>
+            <div>
+              <h6 class="mb-0 fw-bold">30-Day Returns</h6>
+              <small class="text-muted">Hassle-free doorstep pickup</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="perk-card">
+            <div class="perk-icon"><i class="bi bi-shield-check"></i></div>
+            <div>
+              <h6 class="mb-0 fw-bold">Artisanal Guarantee</h6>
+              <small class="text-muted">Crafted to endure</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Storefront Catalog Section -->
+  <main id="catalogSection" class="py-5">
+    <div class="container">
+      <!-- Section Header & Filter Pills -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <div>
+          <h2 class="display-brand mb-1">The Permanent Collection</h2>
+          <p class="text-muted mb-0" id="productCountLabel">Loading designs...</p>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="d-flex flex-wrap gap-2">
+          <button class="category-pill active" data-category="all">All Pieces</button>
+          <button class="category-pill" data-category="women">Women</button>
+          <button class="category-pill" data-category="men">Men</button>
+          <button class="category-pill" data-category="unisex">Unisex</button>
+          <button class="category-pill" data-category="accessories">Accessories</button>
+        </div>
+      </div>
+
+      <!-- Controls Row: Sort & Filter Toggle for Mobile -->
+      <div class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom">
+        <button class="btn btn-outline-secondary btn-sm d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterSidebar">
+          <i class="bi bi-sliders me-1"></i> Filter & Sort
+        </button>
+
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <span class="small text-muted text-uppercase fw-semibold">Sort By:</span>
+          <select id="sortSelect" class="form-select form-select-sm" style="width: 175px;">
+            <option value="featured">Curated & Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Customer Rating</option>
+            <option value="newest">Newest Additions</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Sidebar Filters -->
+        <aside class="col-lg-3 mb-4 collapse d-lg-block" id="filterSidebar">
+          <div class="filter-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="filter-title mb-0">Refine Selection</span>
+              <button class="btn btn-link btn-sm text-decoration-none p-0 text-muted" id="clearFiltersBtn">Reset</button>
+            </div>
+
+            <!-- Size Filter -->
+            <div class="mb-4">
+              <label class="small text-uppercase fw-bold text-muted mb-2 d-block">Size</label>
+              <div class="d-flex flex-wrap gap-1">
+                <button class="size-chip size-filter-btn active" data-size="all">All</button>
+                <button class="size-chip size-filter-btn" data-size="XS">XS</button>
+                <button class="size-chip size-filter-btn" data-size="S">S</button>
+                <button class="size-chip size-filter-btn" data-size="M">M</button>
+                <button class="size-chip size-filter-btn" data-size="L">L</button>
+                <button class="size-chip size-filter-btn" data-size="XL">XL</button>
+              </div>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="priceRangeInput" class="small text-uppercase fw-bold text-muted">Max Price</label>
+                <span class="fw-bold small" id="priceRangeVal">$400</span>
+              </div>
+              <input type="range" class="form-range" id="priceRangeInput" min="50" max="400" step="25" value="400" />
+              <div class="d-flex justify-content-between small text-muted">
+                <span>$50</span>
+                <span>$400</span>
+              </div>
+            </div>
+
+            <hr class="my-4 text-muted" />
+
+            <!-- Editorial Notice -->
+            <div class="bg-light p-3 rounded">
+              <small class="fw-bold d-block text-dark mb-1"><i class="bi bi-stars text-warning me-1"></i> Capsule Wardrobe</small>
+              <p class="small text-muted mb-0">Every piece is designed to harmonize effortlessly across colors, textures, and silhouettes.</p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="col-lg-9">
+          <div class="row" id="productsGrid">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <span class="brand-logo text-white mb-3 d-inline-block">AP <span>MART</span></span>
+          <p class="text-white-50 small pe-lg-4">
+            AP Mart is a contemporary digital fashion atelier committed to architectural tailoring, natural premium fibers, and honest craftsmanship.
+          </p>
+          <div class="d-flex gap-3 text-white-50 fs-5">
+            <a href="#" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase tracking-wider small fw-bold mb-3 text-white">Collections</h6>
+          <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2">
+            <li><a href="#" class="text-white-50 text-decoration-none">Outerwear</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Mongolian Cashmere</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Artisanal Linen</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Mulberry Silk</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase tracking-wider small fw-bold mb-3 text-white">Concierge</h6>
+          <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2">
+            <li><a href="profile.html" class="text-white-50 text-decoration-none">My Account & Orders</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Fit & Sizing Guide</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Shipping & Duties</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Returns & Exchanges</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Care Instructions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="text-uppercase tracking-wider small fw-bold mb-3 text-white">The Journal & Privileges</h6>
+          <p class="small text-white-50">Join our inner circle for private access to seasonal drops and capsule previews.</p>
+          <div class="input-group">
+            <input type="email" class="form-control form-control-sm" placeholder="Enter your email" />
+            <button class="btn btn-aura-primary btn-sm" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center small text-white-50">
+        <span>&copy; 2026 AP Mart Atelier Inc. All rights reserved.</span>
+        <div class="d-flex gap-3 mt-2 mt-sm-0">
+          <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="#" class="text-white-50 text-decoration-none">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODALS & OFFCANVAS DRAWERS                                                -->
+  <!-- ========================================================================= -->
+
+  <!-- Quick View Product Modal -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0 pb-4 px-4">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-6">
+              <div class="rounded overflow-hidden bg-light shadow-sm">
+                <img id="qvImage" src="" alt="Garment preview" class="w-100" style="object-fit: cover; max-height: 480px;" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <span id="qvStockBadge" class="badge bg-success mb-2">In Stock</span>
+              <h2 id="qvTitle" class="display-brand fs-3 mb-1">Product Title</h2>
+              <p id="qvTagline" class="text-muted small mb-3">Tagline description</p>
+
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span id="qvPrice" class="fs-4 fw-bold text-dark">$0</span>
+                <span id="qvOriginalPrice" class="text-muted text-decoration-line-through d-none">$0</span>
+              </div>
+
+              <p id="qvDescription" class="small text-secondary mb-3 leading-relaxed"></p>
+
+              <!-- Size selector -->
+              <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="small fw-bold text-uppercase">Select Size</span>
+                  <a href="#" class="small text-muted text-decoration-underline" onclick="alert('Our garments fit true to size. For an oversized look, size up.'); return false;">Size Guide</a>
+                </div>
+                <div id="qvSizeSelector" class="d-flex flex-wrap gap-2"></div>
+              </div>
+
+              <!-- Color selector -->
+              <div class="mb-4">
+                <span class="small fw-bold text-uppercase d-block mb-1">Available Shades</span>
+                <div id="qvColorSelector" class="d-flex gap-2 align-items-center"></div>
+              </div>
+
+              <!-- Quantity & Add to Cart -->
+              <div class="d-flex gap-3 mb-4">
+                <div class="quantity-control">
+                  <button type="button" id="qvQtyMinus">-</button>
+                  <input type="text" id="qvQtyInput" value="1" readonly class="text-center border-0 fw-bold" style="width: 36px;" />
+                  <button type="button" id="qvQtyPlus">+</button>
+                </div>
+                <button type="button" id="qvAddToCartBtn" class="btn btn-aura-primary flex-grow-1">
+                  <i class="bi bi-bag-plus me-2"></i> Add to Shopping Bag
+                </button>
+              </div>
+
+              <!-- Accordion details: Materials & Care -->
+              <div class="accordion accordion-flush small" id="qvAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-0 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMaterials">
+                      Fabric & Sustainability
+                    </button>
+                  </h2>
+                  <div id="collapseMaterials" class="accordion-collapse collapse" data-bs-parent="#qvAccordion">
+                    <div class="accordion-body px-0 py-2">
+                      <ul id="qvMaterialsList" class="ps-3 mb-0 text-muted"></ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-0 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCare">
+                      Garment Care
+                    </button>
+                  </h2>
+                  <div id="collapseCare" class="accordion-collapse collapse" data-bs-parent="#qvAccordion">
+                    <div class="accordion-body px-0 py-2">
+                      <ul id="qvCareList" class="ps-3 mb-0 text-muted"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Shopping Cart Drawer -->
+  <div class="offcanvas offcanvas-end aura-offcanvas" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title font-serif mb-0"><i class="bi bi-bag me-2"></i>Your Shopping Bag</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-direction-column flex-column">
+
+      <!-- Free Shipping Tracker -->
+      <div class="shipping-progress-box">
+        <small class="d-block text-dark fw-semibold" id="freeShippingText">Calculate shipping</small>
+        <div class="custom-progress">
+          <div class="custom-progress-bar" id="freeShippingBar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Active Promo Code Tag -->
+      <div id="activePromoTag" class="alert alert-success d-flex justify-content-between align-items-center py-2 px-3 small d-none">
+        <span id="activePromoLabel"><i class="bi bi-tag-fill me-1"></i> Promo applied</span>
+        <button type="button" class="btn btn-sm btn-link text-danger p-0" id="removePromoBtn"><i class="bi bi-x"></i></button>
+      </div>
+
+      <!-- Items List -->
+      <div class="flex-grow-1 overflow-auto pe-2" id="cartItemsList">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Cart Footer & Calculation -->
+      <div class="border-top pt-3 mt-3">
+        <!-- Promo Code Input -->
+        <div class="input-group input-group-sm mb-3">
+          <input type="text" id="promoCodeInput" class="form-control text-uppercase" placeholder="Promo code (e.g. AP10)" />
+          <button class="btn btn-dark" type="button" id="applyPromoBtn">Apply</button>
+        </div>
+
+        <div class="d-flex justify-content-between small text-muted mb-1">
+          <span>Subtotal</span>
+          <span id="cartSubtotal" class="fw-semibold text-dark">$0</span>
+        </div>
+        <div class="d-flex justify-content-between small text-success mb-1 d-none" id="cartDiscountRow">
+          <span>Discount</span>
+          <span id="cartDiscount">-$0</span>
+        </div>
+        <div class="d-flex justify-content-between small text-muted mb-2">
+          <span>Estimated Shipping</span>
+          <span id="cartShipping" class="fw-semibold text-dark">FREE</span>
+        </div>
+        <div class="d-flex justify-content-between fs-5 fw-bold text-dark pt-2 border-top mb-3">
+          <span>Total</span>
+          <span id="cartTotal">$0</span>
+        </div>
+
+        <button type="button" id="checkoutCartDrawerBtn" class="btn btn-aura-primary w-100 py-3">
+          Proceed to Checkout <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas Wishlist Drawer -->
+  <div class="offcanvas offcanvas-end aura-offcanvas" tabindex="-1" id="wishlistOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title font-serif mb-0"><i class="bi bi-heart me-2 text-danger"></i>Saved Favorites</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div class="flex-grow-1 overflow-auto" id="wishlistItemsList">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Express Checkout Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title font-serif">Express Secure Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Stepper Indicator -->
+          <div class="checkout-steps">
+            <div class="step-node active" id="stepNode1">
+              <div class="step-circle">1</div>
+              <span class="step-label">Shipping</span>
+            </div>
+            <div class="step-node" id="stepNode2">
+              <div class="step-circle">2</div>
+              <span class="step-label">Payment</span>
+            </div>
+            <div class="step-node" id="stepNode3">
+              <div class="step-circle">3</div>
+              <span class="step-label">Confirmed</span>
+            </div>
+          </div>
+
+          <!-- Step 1: Shipping Info -->
+          <div id="checkoutStep1">
+            <form id="shippingForm" onsubmit="return false;">
+              <div class="mb-3">
+                <label for="shipName" class="form-label small fw-bold">Full Name</label>
+                <input type="text" id="shipName" class="form-control form-control-sm" required placeholder="Elena Rostova" value="Elena Rostova" />
+              </div>
+              <div class="mb-3">
+                <label for="shipEmail" class="form-label small fw-bold">Email Address</label>
+                <input type="email" id="shipEmail" class="form-control form-control-sm" required placeholder="elena@example.com" value="elena@example.com" />
+              </div>
+              <div class="mb-3">
+                <label for="shipAddress" class="form-label small fw-bold">Delivery Address</label>
+                <input type="text" id="shipAddress" class="form-control form-control-sm" required placeholder="452 Madison Ave, Apt 12B" value="452 Madison Ave, Apt 12B" />
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-7">
+                  <label for="shipCity" class="form-label small fw-bold">City</label>
+                  <input type="text" id="shipCity" class="form-control form-control-sm" required placeholder="New York" value="New York" />
+                </div>
+                <div class="col-5">
+                  <label for="shipZip" class="form-label small fw-bold">Postal Code</label>
+                  <input type="text" id="shipZip" class="form-control form-control-sm" required placeholder="10022" value="10022" />
+                </div>
+              </div>
+
+              <div class="bg-light p-3 rounded mb-3 small d-flex justify-content-between">
+                <span>Cart Subtotal</span>
+                <span class="fw-bold" id="checkoutSubtotal">$0</span>
+              </div>
+
+              <button type="submit" id="toStep2Btn" class="btn btn-aura-primary w-100 py-2">
+                Continue to Payment <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Step 2: Payment Simulation -->
+          <div id="checkoutStep2" class="d-none">
+            <form id="paymentForm" onsubmit="return false;">
+              <div class="alert alert-light border small text-muted mb-3">
+                <i class="bi bi-shield-lock-fill text-success me-1"></i> 256-Bit SSL Encrypted Simulated Checkout. No actual card will be charged.
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-bold">Card Number</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                  <input type="text" class="form-control" required placeholder="4242 •••• •••• 4242" value="4242 8899 1234 5678" />
+                </div>
+              </div>
+
+              <div class="row g-2 mb-4">
+                <div class="col-6">
+                  <label class="form-label small fw-bold">Expiry Date</label>
+                  <input type="text" class="form-control form-control-sm" required placeholder="MM/YY" value="08/28" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label small fw-bold">CVV Code</label>
+                  <input type="text" class="form-control form-control-sm" required placeholder="123" value="789" />
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-2 border-top">
+                <span class="fw-bold">Total to Pay:</span>
+                <span class="fs-4 fw-bold text-dark" id="checkoutTotal">$0</span>
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="button" id="backToStep1Btn" class="btn btn-aura-outline flex-grow-1">
+                  Back
+                </button>
+                <button type="button" id="placeOrderBtn" class="btn btn-aura-primary flex-grow-2">
+                  Place Order
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 3: Order Confirmation -->
+          <div id="checkoutStep3" class="d-none text-center py-4">
+            <div class="perk-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.8rem; background-color: #e8f5e9; color: #2e7d32;">
+              <i class="bi bi-check-lg"></i>
+            </div>
+            <h4 class="font-serif">Thank you for your order!</h4>
+            <p class="text-muted small mb-3">Your order has been confirmed and our atelier is preparing your garment package.</p>
+
+            <div class="bg-light p-3 rounded text-start small mb-4">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-muted">Order Number:</span>
+                <span class="fw-bold" id="confirmedOrderId">ORD-893120</span>
+              </div>
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-muted">Estimated Delivery:</span>
+                <span class="fw-semibold text-dark" id="confirmedDelivery">Oct 19</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span class="text-muted">Total Paid:</span>
+                <span class="fw-bold text-dark" id="confirmedTotal">$0</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-aura-primary" data-bs-dismiss="modal">
+              Continue Shopping
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Application Logic Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
